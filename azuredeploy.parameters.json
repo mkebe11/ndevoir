@@ -1,0 +1,112 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "canadacentral"
+    },
+    "osDiskType": {
+      "value": "StandardSSD_LRS"
+    },
+    "addressPrefixes": {
+      "value": [
+        "10.0.0.0/16"
+      ]
+    },
+    "subnets": {
+      "value": [
+        {
+          "name": "default",
+          "properties": {
+            "addressPrefix": "10.0.0.0/20"
+          }
+        }
+      ]
+    },
+    "virtualNetworkId": {
+      "value": "/subscriptions/ca1bae3e-f7c4-4bbd-a545-cdd03804ea34/resourceGroups/devoir1deeploiement_group/providers/Microsoft.Network/virtualNetworks/devoir1deeploiement_group-vnet"
+    },
+    "virtualNetworkName": {
+      "value": "devoir1deeploiement_group-vnet"
+    },
+    "networkSecurityGroups": {
+      "value": [
+        {
+          "name": "basicNsgdevoir1deeploiement_group-vnet-nic01",
+          "id": "/subscriptions/ca1bae3e-f7c4-4bbd-a545-cdd03804ea34/resourceGroups/devoir1deeploiement_group/providers/Microsoft.Network/networkSecurityGroups/basicNsgdevoir1deeploiement_group-vnet-nic01",
+          "rules": []
+        }
+      ]
+    },
+    "networkInterfaceConfigurations": {
+      "value": [
+        {
+          "name": "devoir1deeploiement_group-vnet-nic01",
+          "primary": true,
+          "subnetId": "/subscriptions/ca1bae3e-f7c4-4bbd-a545-cdd03804ea34/resourceGroups/devoir1deeploiement_group/providers/Microsoft.Network/virtualNetworks/devoir1deeploiement_group-vnet/subnets/default",
+          "applicationGatewayBackendAddressPools": [],
+          "loadBalancerBackendAddressPools": [],
+          "applicationSecurityGroups": [],
+          "loadBalancerInboundNatPools": [],
+          "enableAcceleratedNetworking": false,
+          "nsgName": "basicNsgdevoir1deeploiement_group-vnet-nic01",
+          "nsgId": "/subscriptions/ca1bae3e-f7c4-4bbd-a545-cdd03804ea34/resourceGroups/devoir1deeploiement_group/providers/Microsoft.Network/networkSecurityGroups/basicNsgdevoir1deeploiement_group-vnet-nic01",
+          "pipName": "publicIp-devoir1deeploiement_group-vnet-nic"
+        }
+      ]
+    },
+    "vmName": {
+      "value": "devoir1deeploiement"
+    },
+    "virtualMachineScaleSetName": {
+      "value": "devoir1deeploiement"
+    },
+    "instanceCount": {
+      "value": "2"
+    },
+    "instanceSize": {
+      "value": "Standard_D2s_v3"
+    },
+    "zone": {
+      "value": [
+        "1",
+        "2"
+      ]
+    },
+    "zoneBalance": {
+      "value": "false"
+    },
+    "platformFaultDomainCount": {
+      "value": "1"
+    },
+    "scaleInPolicy": {
+      "value": {
+        "rules": [
+          "Default"
+        ],
+        "forceDeletion": false
+      }
+    },
+    "upgradePolicy": {
+      "value": "Manual"
+    },
+    "hibernationEnabled": {
+      "value": false
+    },
+    "adminUsername": {
+      "value": "azureuser"
+    },
+    "customData": {
+      "value": null
+    },
+    "securityType": {
+      "value": "TrustedLaunch"
+    },
+    "secureBoot": {
+      "value": true
+    },
+    "vTPM": {
+      "value": true
+    }
+  }
+}
